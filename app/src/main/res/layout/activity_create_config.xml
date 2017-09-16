@@ -54,7 +54,7 @@
             android:text="Create Configuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/addToConfig"
+            android:id="@+id/createConfig"
             app:layout_anchorGravity="top|center_horizontal"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_alignParentBottom="true"
@@ -89,11 +89,38 @@
             android:layout_below="@+id/editText2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_marginRight="96dp"
+            android:layout_marginEnd="96dp"
+            android:hint="Key"
             android:layout_alignRight="@+id/addToConfig"
-            android:layout_alignEnd="@+id/addToConfig"
-            android:layout_marginRight="84dp"
-            android:layout_marginEnd="84dp"
-            android:hint="Key" />
+            android:layout_alignEnd="@+id/addToConfig" />
+
+        <Button
+            android:text="Add To Configuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText4"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/addKeyValue" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:layout_below="@+id/addKeyValue"
+            android:layout_marginTop="20dp"
+            android:id="@+id/editText5"
+            android:layout_marginRight="53dp"
+            android:layout_marginEnd="53dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:layout_above="@+id/addToConfig"
+            android:layout_marginBottom="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 

@@ -6,9 +6,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class CreateConfigActivity extends AppCompatActivity {
 
@@ -18,6 +22,22 @@ public class CreateConfigActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_config);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        TextView tx = (TextView) findViewById(R.id.editText5);
+        tx.setKeyListener(null);
+        Button addToConfig = (Button) findViewById(R.id.addKeyValue);
+        addToConfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleAddKeyPair(v);
+            }
+        });
+        Button createConfig = (Button) findViewById(R.id.createConfig);
+        createConfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                writeFileData
+            }
+        });
     }
 
     @Override
@@ -50,7 +70,15 @@ public class CreateConfigActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public boolean handleAddKeyPair() {
+    public boolean handleAddKeyPair(View v) {
+        EditText key = (EditText) findViewById(R.id.editText3);
+        EditText value = (EditText) findViewById(R.id.editText4);
+        EditText configView = (EditText) findViewById(R.id.editText5);
+        String keyValue = key.getText().toString();
+        String textValue = key.getText().toString();
+        if (keyValue.length() > 0 && textValue.length() > 0) {
+            configView.append("\t\t"+ keyValue +": " + textValue + "\n");
+        }
         return true;
     }
 }

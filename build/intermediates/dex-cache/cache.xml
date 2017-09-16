@@ -52,7 +52,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="5de6dbd5353cacf249a1582600e7da7c2c1ed38d">
+        sha1="5ecd44c034e5e27f9edefeff448aa9cb358ffe86">
         <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_371b6042dbbeee12a630c5a15eecda7ddf135834/classes.dex" />
     </item>
     <item
