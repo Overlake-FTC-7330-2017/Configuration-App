@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FTC Config App</string>
+    <string name="action_view_config">View Config</string>
+    <string name="action_create_config">Create Config</string>
+    <string name="action_edit_config">Edit Config</string>
+    <string name="action_delete_config">Delete Config</string>
+    <string name="title_activity_create_config">CreateConfigActivity</string>
+    <string name="title_activity_edit_config">EditConfigActivity</string>
+    <string name="title_activity_delete_config">DeleteConfig</string>
+</resources>

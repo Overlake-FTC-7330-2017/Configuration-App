@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.overlake.ftc.configapp.CreateConfigActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Create Configuration"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:fontFamily="sans-serif-medium" />
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_create_config" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="119dp"
+            android:id="@+id/editText2"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            style="@android:style/Widget.Material.EditText"
+            android:contentDescription="ConfigName"
+            android:hint="Configuration Name..." />
+
+        <Button
+            android:text="Create Configuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addToConfig"
+            app:layout_anchorGravity="top|center_horizontal"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="28dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editText4"
+            style="@android:style/Widget.Material.EditText"
+            android:layout_alignBaseline="@+id/editText3"
+            android:layout_alignBottom="@+id/editText3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/addToConfig"
+            android:layout_alignStart="@+id/addToConfig"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="100dp"
+            android:hint="Value" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="15dp"
+            android:id="@+id/editText3"
+            style="@android:style/Widget.Material.EditText"
+            android:layout_below="@+id/editText2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/addToConfig"
+            android:layout_alignEnd="@+id/addToConfig"
+            android:layout_marginRight="84dp"
+            android:layout_marginEnd="84dp"
+            android:hint="Key" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
