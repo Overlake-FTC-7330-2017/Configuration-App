@@ -1,41 +1,93 @@
 package com.overlake.ftc.configapp;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+import android.os.Environment;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.HashSet;
+import java.util.Set;
+
 public class CreateConfigActivity extends AppCompatActivity {
+
+    private final static String FILE_EXTENSION = ".omc";
+
+    private Set<String> keys;
+    private File externalRoot;
+    private File root;
+    private String data;
+    private Spinner typeSelector;
+    private Toolbar toolbar;
+    private EditText title;
+    private EditText keyInput;
+    private EditText valueInput;
+    private EditText dataContainer;
+    private Button addToConfig;
+    private Button createConfig;
+    private Snackbar sb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        data = "";
+        keys = new HashSet<String>();
+
         setContentView(R.layout.activity_create_config);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        addToConfig = (Button) findViewById(R.id.addKeyValue);
+        createConfig = (Button) findViewById(R.id.createConfig);
+        typeSelector = (Spinner) findViewById(R.id.typeSelector);
+        title = (EditText) findViewById(R.id.editText2);
+        dataContainer = (EditText) findViewById(R.id.editText5);
+        keyInput = (EditText) findViewById(R.id.editText3);
+        valueInput = (EditText) findViewById(R.id.editText4);
+
         setSupportActionBar(toolbar);
-        TextView tx = (TextView) findViewById(R.id.editText5);
-        tx.setKeyListener(null);
-        Button addToConfig = (Button) findViewById(R.id.addKeyValue);
+        dataContainer.setKeyListener(null);
         addToConfig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 handleAddKeyPair(v);
             }
         });
-        Button createConfig = (Button) findViewById(R.id.createConfig);
+
+        externalRoot = Environment.getExternalStorageDirectory();
+        if (isExternalStorageAvailable() || !isExternalStorageReadOnly()) {
+            root = new File(getExternalFilesDir(""), "configurations");
+            if (!root.exists()) {
+                root.mkdirs();
+            }
+        }
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.type_array, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        typeSelector.setAdapter(adapter);
+
         createConfig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                writeFileData
+                handleCreateConfig(v);
             }
         });
     }
@@ -71,14 +123,165 @@ public class CreateConfigActivity extends AppCompatActivity {
     }
 
     public boolean handleAddKeyPair(View v) {
-        EditText key = (EditText) findViewById(R.id.editText3);
-        EditText value = (EditText) findViewById(R.id.editText4);
-        EditText configView = (EditText) findViewById(R.id.editText5);
-        String keyValue = key.getText().toString();
-        String textValue = key.getText().toString();
-        if (keyValue.length() > 0 && textValue.length() > 0) {
-            configView.append("\t\t"+ keyValue +": " + textValue + "\n");
+        String keyValue = keyInput.getText().toString();
+        String value = valueInput.getText().toString();
+        String dataType = typeSelector.getSelectedItem().toString();
+        boolean isValidType = checkType(dataType, value);
+        boolean isDuplicate = keys.contains(keyValue);
+        if (keyValue.length() == 0) {
+            String message = "A key is needed for a valid key:value pair!";
+            sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+            sb.show();
+        } else if (value.length() == 0) {
+            String message = "A value is needed for a valid key:value pair!";
+            sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+            sb.show();
+        } else if (isDuplicate) {
+            String message = "Key \"" + keyValue + "\" already exists in the configuration!";
+            sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+            sb.show();
+        } else if (!isValidType) {
+            String message =
+                    "Value \"" + value + "\" does not match selected type of \"" + dataType + "\"!";
+            sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+            sb.show();
+        } else {
+            data += String.format("[%s] %s: %s\n", dataType, keyValue, value);
+            dataContainer.append(data);
+            keys.add(keyValue);
         }
         return true;
+    }
+
+    public boolean checkType(String type, String value) {
+        type = type.toLowerCase();
+        boolean success = false;
+        switch (type) {
+            case "int":
+                try {
+                    Integer.parseInt(value);
+                    success = true;
+                } catch (Exception e) {
+                    success = false;
+                }
+                return success;
+            case "float":
+                try {
+                    Float.parseFloat(value);
+                    success = true;
+                } catch(Exception e) {
+                    success = false;
+                }
+                return success;
+            case "double":
+                try {
+                    Double.parseDouble(value);
+                    success = true;
+                } catch (Exception e) {
+                    success = false;
+                }
+                return success;
+            case "char":
+                if (value.length() == 1) {
+                    success = true;
+                } else {
+                    success = false;
+                }
+                return success;
+            case "byte":
+                try {
+                    Byte.parseByte(value);
+                    success = true;
+                } catch (Exception e) {
+                    success = false;
+                }
+                return success;
+            case "long":
+                try {
+                    Long.parseLong(value);
+                    success = true;
+                } catch (Exception e) {
+                    success = false;
+                }
+                return success;
+            case "short":
+                try {
+                    Short.parseShort(value);
+                    success = true;
+                } catch (Exception e) {
+                    success = false;
+                }
+                return success;
+            case "boolean":
+                try {
+                    Boolean.parseBoolean(value);
+                    try {
+                        int test = Integer.parseInt(value);
+                        if (test >= 0 && test <= 1) {
+                            success = true;
+                        } else {
+                            success = false;
+                        }
+                    } catch (Exception e) {
+                        success = false;
+                    }
+                    success = true;
+                } catch (Exception e) {
+                    success = false;
+                }
+                return success;
+            case "string":
+                return true;
+            default:
+                return success;
+        }
+    }
+
+    public boolean handleCreateConfig(View v) {
+        String titleValue = title.getText().toString();
+        FileOutputStream output;
+        File file = new File(root, titleValue + FILE_EXTENSION);
+        if (titleValue.length() == 0) {
+            String message = "Configuration needs a name!";
+            sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+            sb.show();
+        } else {
+            try {
+                if (file.exists()) {
+                    String message = "Configuration \"" + file.getName() + "\" already exists!";
+                    sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+                    sb.show();
+                } else {
+                    output = new FileOutputStream(file);
+                    output.write(data.getBytes());
+                    output.flush();
+                    output.close();
+                    String message = "Created configuration \"" + titleValue + "\"!";
+                    sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+                    sb.show();
+                }
+            } catch(Exception e) {
+                String message = "Failed to write file \"" + titleValue + "\"!\n" + e;
+                sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+                sb.show();
+            }
+        }
+        return true;
+    }
+
+    private static boolean isExternalStorageReadOnly() {
+        String extStorageState = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(extStorageState)) {
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean isExternalStorageAvailable() {
+        String extStorageState = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(extStorageState)) {
+            return true;
+        }
+        return false;
     }
 }

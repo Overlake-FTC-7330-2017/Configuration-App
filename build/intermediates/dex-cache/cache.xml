@@ -12,15 +12,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_a8b048091f7fbf03df6f666d70657e85b4d5ca47/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -30,20 +21,11 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
-        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.4.0_a45fae3a5e5ecbc368aa957648026ab717dd159f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="ab266d11b1f6e164cee400506b87f1d56a5f25d4">
+        sha1="b772644b2bc7eda4ecd51df8a5fd29da32208a8a">
         <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_15ac62e1b958ffa40de385444868d55667af65ce/classes.dex" />
     </item>
     <item
@@ -52,17 +34,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="5ecd44c034e5e27f9edefeff448aa9cb358ffe86">
+        sha1="3c3fc8b26374b77103b9aacf8e105c53727a48f3">
         <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_371b6042dbbeee12a630c5a15eecda7ddf135834/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_c82e91bba6e48c75e83ec6eb76f8dde03262e328/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -90,6 +63,33 @@
         revision="25.0.0"
         sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
         <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_5931977f8ffc7350185ce2096e44623ad5d29942/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_a8b048091f7fbf03df6f666d70657e85b4d5ca47/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.4.0_a45fae3a5e5ecbc368aa957648026ab717dd159f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_c82e91bba6e48c75e83ec6eb76f8dde03262e328/classes.dex" />
     </item>
 
 </items>

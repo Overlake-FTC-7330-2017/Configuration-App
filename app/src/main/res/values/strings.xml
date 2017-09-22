@@ -7,4 +7,19 @@
     <string name="title_activity_create_config">CreateConfigActivity</string>
     <string name="title_activity_edit_config">EditConfigActivity</string>
     <string name="title_activity_delete_config">DeleteConfig</string>
+    <string-array name="type_array">
+        <item>int</item>
+        <item>float</item>
+        <item>double</item>
+        <item>char</item>
+        <item>byte</item>
+        <item>long</item>
+        <item>short</item>
+        <item>boolean</item>
+        <item>String</item>
+    </string-array>
+    <string name="title_activity_view_config">ViewConfig</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
