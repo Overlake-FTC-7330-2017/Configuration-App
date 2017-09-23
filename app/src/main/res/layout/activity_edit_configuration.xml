@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.overlake.ftc.configapp.EditConfiguration">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Configuration Name"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:fontFamily="sans-serif-medium" />
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_edit_configuration" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="100dp"
+            android:id="@+id/valueSelector" />
+
+        <TextView
+            android:text="Choose Value To Edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/valueSelector"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="39dp"
+            android:id="@+id/edit_text" />
+
+        <Button
+            android:text="Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:id="@+id/backButton" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Key"
+            android:ems="10"
+            android:layout_alignTop="@+id/deletePair"
+            android:layout_toRightOf="@+id/deletePair"
+            android:layout_toEndOf="@+id/deletePair"
+            android:id="@+id/editKey" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Value"
+            android:ems="10"
+            android:layout_below="@+id/deletePair"
+            android:layout_alignRight="@+id/editKey"
+            android:layout_alignEnd="@+id/editKey"
+            android:layout_marginTop="23dp"
+            android:id="@+id/editValue" />
+
+        <TextView
+            android:text="Edit Data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editKey"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/editData" />
+
+        <Button
+            android:text="Remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/deletePair"
+            android:layout_below="@+id/valueSelector"
+            android:layout_marginRight="23dp"
+            android:layout_marginEnd="23dp"
+            android:layout_toLeftOf="@+id/edit_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="Update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/updatePair"
+            android:layout_above="@+id/backButton"
+            android:layout_alignRight="@+id/backButton"
+            android:layout_alignEnd="@+id/backButton"
+            android:layout_marginBottom="79dp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/typeSelector"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="Data Type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dataType"
+            android:layout_below="@+id/editValue"
+            android:layout_alignLeft="@+id/editData"
+            android:layout_alignStart="@+id/editData" />
+
+        <Switch
+            android:text="Add New Pair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addSwitch"
+            android:layout_above="@+id/updatePair"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="13dp" />
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

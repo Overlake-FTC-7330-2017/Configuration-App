@@ -1,14 +1,11 @@
 package com.overlake.ftc.configapp;
 
-import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,9 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -112,7 +106,7 @@ public class CreateConfigActivity extends AppCompatActivity {
                 startActivity(new Intent(CreateConfigActivity.this, MainActivity.class));
                 return true;
             case R.id.action_edit_config:
-                startActivity(new Intent(CreateConfigActivity.this, EditConfigActivity.class));
+                startActivity(new Intent(CreateConfigActivity.this, EditConfigListActivity.class));
                 return true;
             case R.id.action_delete_config:
                 startActivity(new Intent(CreateConfigActivity.this, DeleteConfig.class));

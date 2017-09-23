@@ -38,7 +38,7 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".EditConfigActivity"
+            android:name=".EditConfigListActivity"
             android:label="@string/title_activity_edit_config"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -49,6 +49,10 @@
             android:name=".ViewConfig"
             android:label="@string/title_activity_view_config"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EditConfiguration"
+            android:label="@string/title_activity_edit_configuration"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -4,8 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,12 +11,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.webkit.ConsoleMessage;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.io.Console;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -105,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_view_config:
                 return true;
             case R.id.action_edit_config:
-                startActivity(new Intent(MainActivity.this, EditConfigActivity.class));
+                startActivity(new Intent(MainActivity.this, EditConfigListActivity.class));
                 return true;
             case R.id.action_delete_config:
                 startActivity(new Intent(MainActivity.this, DeleteConfig.class));

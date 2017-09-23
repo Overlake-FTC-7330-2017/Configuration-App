@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -128,7 +127,7 @@ public class DeleteConfig extends AppCompatActivity {
                 startActivity(new Intent(DeleteConfig.this, MainActivity.class));
                 return true;
             case R.id.action_edit_config:
-                startActivity(new Intent(DeleteConfig.this, EditConfigActivity.class));
+                startActivity(new Intent(DeleteConfig.this, EditConfigListActivity.class));
                 return true;
             case R.id.action_delete_config:
                 return true;

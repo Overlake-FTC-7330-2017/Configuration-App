@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.overlake.ftc.configapp.EditConfigActivity">
+    tools:context="com.overlake.ftc.configapp.EditConfigListActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -32,5 +32,19 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_edit_config" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="58dp"
+            android:id="@+id/editList" />
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

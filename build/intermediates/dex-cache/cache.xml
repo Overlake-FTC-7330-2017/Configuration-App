@@ -25,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="b772644b2bc7eda4ecd51df8a5fd29da32208a8a">
+        sha1="a764feb119b419b3a693946019276b3cfc4e2730">
         <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_15ac62e1b958ffa40de385444868d55667af65ce/classes.dex" />
     </item>
     <item
@@ -34,17 +34,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="3c3fc8b26374b77103b9aacf8e105c53727a48f3">
+        sha1="510848be26952a121a2f4e720e240b8d61be5934">
         <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_371b6042dbbeee12a630c5a15eecda7ddf135834/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_1d7e0157c5613e831b85e1ec8ec8b9323e46e8b3/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -54,6 +45,15 @@
         revision="25.0.0"
         sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
         <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_8d0e942ed904da7efb36d9e0fb2a4592a67bef3b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_1d7e0157c5613e831b85e1ec8ec8b9323e46e8b3/classes.dex" />
     </item>
     <item
         is-multidex="true"
