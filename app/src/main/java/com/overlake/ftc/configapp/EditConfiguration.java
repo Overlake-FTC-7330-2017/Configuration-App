@@ -41,6 +41,7 @@ public class EditConfiguration extends AppCompatActivity {
 
     private Map<String, ConfigData> configData;
     private List<String> keys;
+    private List<String> types;
     private ArrayAdapter<String> arrayAdapter;
 
     private String currentKey;
@@ -82,6 +83,11 @@ public class EditConfiguration extends AppCompatActivity {
                 R.array.type_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+        types = new ArrayList<String>();
+        for (int i = 0; i < adapter.getCount(); i++) {
+            types.add(adapter.getItem(i).toString());
+        }
+
         arrayAdapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, keys
         );
@@ -97,6 +103,10 @@ public class EditConfiguration extends AppCompatActivity {
                 keyInput.setText(keys.get(position));
                 currentKey = keys.get(position);
                 valueInput.setText(configData.get(currentKey).value);
+                typeSpinner.setSelection(types.indexOf(configData.get(currentKey).type));
+                String message = "Selected key \"" + currentKey + "\"!";
+                sb = Snackbar.make(view, message, Snackbar.LENGTH_SHORT);
+                sb.show();
             }
             public void onNothingSelected(AdapterView<?> parent)
             {
@@ -117,16 +127,29 @@ public class EditConfiguration extends AppCompatActivity {
                         keys.add(keyInput.getText().toString());
                         arrayAdapter.notifyDataSetChanged();
                     } else {
-
+                        String message =
+                                "Key \"" + keyInput.getText().toString() + "\" already exists!";
+                        sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+                        sb.show();
                         return;
                     }
                 } else {
                     //update data
                     c = new ConfigData("", "", "");
-                    if (keys.size() > 0 && keys.indexOf(keyInput.getText().toString()) == -1) {
+                    if (keys.size() > 0 && keys.indexOf(keyInput.getText().toString()) != -1) {
                         c = configData.get(currentKey);
                         keys.set(keys.indexOf(currentKey), keyInput.getText().toString());
                         arrayAdapter.notifyDataSetChanged();
+                    } else if (keys.size() == 0) {
+                        String message = "Configuration has no data to edit!";
+                        sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+                        sb.show();
+                        return;
+                    } else {
+                        String message = "Cannot add key \"" + keyInput.getText().toString() + "\" as it already exists!";
+                        sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+                        sb.show();
+                        return;
                     }
                 }
                 currentKey = keyInput.getText().toString();
@@ -136,6 +159,13 @@ public class EditConfiguration extends AppCompatActivity {
                 c.type = typeSpinner.getSelectedItem().toString();
                 if (checkType(c.type, c.value) && keys.size() > 0) {
                     writeFile(v);
+                } else {
+                    String message =
+                            "Value of \"" + c.value + "\" does not match type of \"" + c.type + "\" !";
+                    sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+                    sb.show();
+                    sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+                    sb.show();
                 }
             }
         });
@@ -154,14 +184,24 @@ public class EditConfiguration extends AppCompatActivity {
                 configData.remove(currentKey);
                 keys.remove(currentKey);
                 arrayAdapter.notifyDataSetChanged();
+                Log.d("TAG", configData + "\n" +  keys);
                 if (keys.size() > 0) {
+                    String message = "Deleted key \"" + currentKey + "\" from configuration!";
+                    valueSpinner.setSelection(0);
                     keyInput.setText(configData.get(valueSpinner.getSelectedItem().toString()).key);
-                    valueInput.setText(configData.get(valueSpinner.getSelectedItem().toString()).value);
+                    valueInput.setText(
+                            configData.get(valueSpinner.getSelectedItem().toString()).value
+                    );
                     currentKey = keyInput.getText().toString();
+                    sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+                    sb.show();
                 } else {
                     currentKey = "";
-                    keyInput.setText("No Data To Edit");
-                    valueInput.setText("No Data To Edit");
+                    keyInput.setText("");
+                    valueInput.setText("");
+                    String message = "Configuration has no data to edit!";
+                    sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
+                    sb.show();
                 }
                 writeFile(v);
             }
@@ -186,7 +226,9 @@ public class EditConfiguration extends AppCompatActivity {
         FileOutputStream output;
         File file = currentFile;
         if (titleValue.length() == 0) {
-            String message = "Configuration needs a name!";
+            String message =
+                    "Configuration has no name, there is literally no way this will happen!" +
+                            "\n But it just did...";
             sb = Snackbar.make(v, message, Snackbar.LENGTH_SHORT);
             sb.show();
         } else {
