@@ -18,8 +18,6 @@ import java.util.List;
 
 public class EditConfigListActivity extends AppCompatActivity {
 
-    private ConfigParser p;
-
     private File[] files;
     private File externalRoot;
     private File root;
