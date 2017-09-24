@@ -7,7 +7,6 @@ import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.configList);
 
         externalRoot = Environment.getExternalStorageDirectory();
-
         root = new File(getExternalFilesDir(""), "configurations");
         if (root.exists()) {
             files = root.listFiles();
@@ -76,9 +74,7 @@ public class MainActivity extends AppCompatActivity {
         fileNames = new ArrayList<String>();
         for (int i = 0; i < files.length; i++) {
             fileNames.add(files[i].getName());
-            Log.d("FILE", files[i].toString());
         }
-        Log.d("FILE", fileNames.toString());
     }
 
     @Override

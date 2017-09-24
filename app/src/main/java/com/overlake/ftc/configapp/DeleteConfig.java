@@ -9,7 +9,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -100,9 +99,7 @@ public class DeleteConfig extends AppCompatActivity {
         fileNames = new ArrayList<String>();
         for (int i = 0; i < files.length; i++) {
             fileNames.add(files[i].getName());
-            Log.d("FILE", files[i].toString());
         }
-        Log.d("FILE", fileNames.toString());
     }
 
 

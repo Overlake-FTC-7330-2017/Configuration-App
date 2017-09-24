@@ -6,7 +6,6 @@ import android.os.Environment;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -73,8 +72,6 @@ public class EditConfiguration extends AppCompatActivity {
 
         title.setText(currentFile.getName());
         if (configData.size() > 0) {
-            Log.d("KEY", currentKey);
-            Log.d("KEY", configData.get(currentKey).toString());
             keyInput.setText(currentKey);
             valueInput.setText(configData.get(currentKey).value);
         }
@@ -184,7 +181,6 @@ public class EditConfiguration extends AppCompatActivity {
                 configData.remove(currentKey);
                 keys.remove(currentKey);
                 arrayAdapter.notifyDataSetChanged();
-                Log.d("TAG", configData + "\n" +  keys);
                 if (keys.size() > 0) {
                     String message = "Deleted key \"" + currentKey + "\" from configuration!";
                     valueSpinner.setSelection(0);
@@ -272,7 +268,6 @@ public class EditConfiguration extends AppCompatActivity {
                 configData.put(key, new ConfigData(type, key, value));
                 keys.add(key);
             }
-            Log.d("D", configData.toString());
         } catch(Exception e) {
             e.printStackTrace();
         }

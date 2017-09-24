@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EditConfigListActivity extends AppCompatActivity {
+
+    private ConfigParser p;
 
     private File[] files;
     private File externalRoot;
@@ -66,9 +67,7 @@ public class EditConfigListActivity extends AppCompatActivity {
         fileNames = new ArrayList<String>();
         for (int i = 0; i < files.length; i++) {
             fileNames.add(files[i].getName());
-            Log.d("FILE", files[i].toString());
         }
-        Log.d("FILE", fileNames.toString());
     }
 
 
