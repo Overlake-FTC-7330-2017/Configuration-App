@@ -2,94 +2,94 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/evancoulson/.android/build-cache/e485ec9c9284f313ea8b98ddd86275600d390270/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/EvanCoulson/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
-        <dex dex="/Users/evancoulson/github/Configuration-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ff683f6eda5408c3842a480c5b3f00838f5f538e/classes.dex" />
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_08312e8b214218072425b6a96f6590703ccfddf7.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/evancoulson/.android/build-cache/b73ca3f6a05a6f7f8e381338c57cd0a6c3536935/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="/Users/evancoulson/github/Configuration-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_33f29485570ff06464b4448b958c79d8254d229e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/evancoulson/.android/build-cache/ded2137fe539c3f79515291383b54a0578c05455/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="/Users/evancoulson/github/Configuration-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b5f4fbe0dce398a17b3ab5a37f74b866fe355126/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/evancoulson/.android/build-cache/b73ca3f6a05a6f7f8e381338c57cd0a6c3536935/output/jars/libs/internal_impl-23.4.0.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/EvanCoulson/.android/build-cache/6619a60810bac0382f2e3a0fb9477157587c05f7/output/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="/Users/evancoulson/github/Configuration-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_79a4dcf54151cb984855b6b7dae68c6a0d223ac5/classes.dex" />
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_1c876e03d1998588ed82850ed358a00840ca25fd.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/evancoulson/.android/build-cache/5ebe2a94c2b417bcdd65c21ae8587a32ee11e474/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/EvanCoulson/.android/build-cache/3debfd9b71098da436f9210c0624916a387fb365/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/pre-dexed/debug/classes_f8f3d56f3cfc8dd9e6d9ddf34097111b3bdd2179.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/EvanCoulson/.android/build-cache/6619a60810bac0382f2e3a0fb9477157587c05f7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/pre-dexed/debug/classes_a0ab6188243889188857f882be754079cc7d8804.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/EvanCoulson/.android/build-cache/22ed14e5105db91f563366199837e7f87fc6f06b/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="/Users/evancoulson/github/Configuration-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1c7e6d627240c10ddfe59a8287020e42e6f7d3d9/classes.dex" />
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/pre-dexed/debug/classes_eb2a8ca35c3731cf183105f22162b323018173d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/EvanCoulson/.android/build-cache/354cf530ec34036d5c464fdebd7ff15471e8686f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/pre-dexed/debug/classes_9edc27ff6be173913bb440e8376f89c1aca308b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/EvanCoulson/.android/build-cache/08eaccb35fa7f77a29f26029532d2dc24e52e13e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/pre-dexed/debug/classes_37453d4a5a3e5613d214805155b0bd91db60655d.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/evancoulson/github/Configuration-App/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/evancoulson/github/Configuration-App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_346d26a38e7d054df5abbe41591a4138e1153a25/classes.dex" />
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_15ac62e1b958ffa40de385444868d55667af65ce/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/EvanCoulson/.android/build-cache/9b753955540af0ea71519b27cdaea5ecaf31a33a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/pre-dexed/debug/classes_86c6572bfb75da20b4bd425a80954bc8d39d0a30.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/evancoulson/.android/build-cache/f78169855fed29c41b608e66057ee5a726f5d540/output/jars/classes.jar"
+        jar="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="/Users/evancoulson/github/Configuration-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0390b8e0581c9d340b54a6a02563a8a34b07db3a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/evancoulson/.android/build-cache/8f8d60a3dc307e2312d0c791064f29d15b6a7b9b/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
-        <dex dex="/Users/evancoulson/github/Configuration-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9faf48e8a9517087563be8b5b771c17cad8f78a4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/evancoulson/github/Configuration-App/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="39f391b82b260682d4ec31c78114a0fa369b4590">
-        <dex dex="/Users/evancoulson/github/Configuration-App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_d8ba8fda13f2f7999c1c06531258fdb6baa9545d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/evancoulson/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="/Users/evancoulson/github/Configuration-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_f602ead316caf52db452bdad990f7e14d02690d3/classes.dex" />
+        sha1="66a5d78223c2dedc560f0271f53674a62e028b22">
+        <dex dex="/Users/EvanCoulson/github/ConfigApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_371b6042dbbeee12a630c5a15eecda7ddf135834/classes.dex" />
     </item>
 
 </items>
